@@ -5,13 +5,20 @@ on:
     branches:
     - test
 jobs:
-  - name: check-url-status
+  check-url-status:
     runs-on: ubuntu-latest
     steps:
       - name: Check url status
         uses: seveibar/url-health-check-action@v1.9
         with:
           url: https://surf-thailand.com
+          max-time: 1m
+          request-timeout: 10s
+          max-attempts: 1
+      - name: Check url status
+        uses: seveibar/url-health-check-action@v1.9
+        with:
+          url: https://surf-thailand.com/a
           max-time: 1m
           request-timeout: 10s
           max-attempts: 1
