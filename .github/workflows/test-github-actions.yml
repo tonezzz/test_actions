@@ -5,7 +5,7 @@ on:
     branches:
     - test
 jobs:
-  check-url-status:
+  - name: check-url-status:
     runs-on: ubuntu-latest
     steps:
       - name: Check url status
