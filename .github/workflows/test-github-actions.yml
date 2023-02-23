@@ -8,10 +8,17 @@ jobs:
   check-bats-version:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '14'
-      - run: npm install -g bats
-      - run: bats -v
-      
+      name: Check url status
+      uses: seveibar/url-health-check-action@v1.9
+      with:
+        url: https://surf-thailand.com
+        max-time: 1m
+        request-timeout: 10s
+        max-attempts: 1
+      #- uses: actions/checkout@v3
+      #- uses: actions/setup-node@v3
+      #  with:
+      #    node-version: '14'
+      #- run: npm install -g bats
+      #- run: bats -v
+
