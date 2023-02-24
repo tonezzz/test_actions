@@ -1,0 +1,12 @@
+name: Test manual workflow
+run-name: ${{ github.actor }} is testing manual workflow
+on:
+  workflow_dispatch:
+    #branches:
+    #- test
+jobs:
+  test-manual-workflow:
+    runs-on: ubuntu-latest
+    steps:
+    - run: pwd
+    - run: whoami
